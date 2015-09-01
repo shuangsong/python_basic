@@ -1,3 +1,4 @@
+#search a string and count how many times a word occur in it:
 s = 'voboboobobeboboboopcoboboboboboow'
 sb = 'bob'
 results = 0

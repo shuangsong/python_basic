@@ -15,10 +15,10 @@ while abs(remain) >= epsilon:
     payment = (high + low) / 2
     for month in range(1,13):
         remain = (remain - payment) * (1 + rate)
-    if remain < 0:
+    if remain < 0: # we need to adjust payment less cuz we pay more.
         high = payment
         remain =  obalance
-    elif remain > epsilon:
+    elif remain > epsilon: # else with epsilon std 
         low = payment
         remain = obalance 
 print "Lowest payment: " + str(round(payment,2)) 

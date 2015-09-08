@@ -183,4 +183,83 @@ def iterPower(base, exp):
 
 #print iterPower(-4.12,0)
 
+def recurPower(base, exp):
+    '''
+    base: int or float.
+    exp: int >= 0
+ 
+    returns: int or float, base^exp
+    '''
+    # Your code here
+    exp = abs(int(exp))
+    if exp == 0:
+        return 1.0000
+    return base * recurPower(base,exp-1)
+
+
+
+# use recursive call and another way to compute expo:
+
+def recurPowerNew(base, exp):
+    '''
+    base: int or float.
+    exp: int >= 0
+
+    returns: int or float; base^exp
+    '''
+    # Your code here
+    exp = abs(int(exp))
+    if exp == 0:
+        return 1.0000
+    elif exp > 0 and exp % 2 == 0: # even number
+        return recurPowerNew(base*base, exp/2)
+    else:
+        return base * recurPowerNew(base, exp - 1)
+    
+    
+#Write an iterative function, gcdIter(a, b), that implements this idea. One easy way 
+#to do this is to begin with a test value equal to the smaller of the two input arguments,
+# and iteratively reduce this test value by 1 until you either reach a case where the test divides
+# both a and b without remainder, or you reach 1. 
+
+def gcdIter(a, b):
+    '''
+    a, b: positive integers
+    
+    returns: a positive integer, the greatest common divisor of a & b.
+    '''
+    # Your code here
+    a = abs(a)
+    b = abs(b)
+    start = min(a,b)
+    for i in range(1,start + 1):
+        if a % start == 0 and b % start == 0:
+            return start
+        else:
+            start -= 1
+    return start
+            
+# use Euclidean algorithm :
+def gcdRecur(a, b):
+    '''
+    a, b: positive integers
+    
+    returns: a positive integer, the greatest common divisor of a & b.
+    '''
+    # Your code here
+    a = abs(a)
+    b = abs(b)
+    if b == 0 :
+        return a 
+    else:
+        return gcdRecur(b, a % b)
+    
+
+
+
+
+
+
+
+
 

@@ -255,6 +255,38 @@ def gcdRecur(a, b):
         return gcdRecur(b, a % b)
     
 
+#Write an iterative function, lenIter, which computes the length of an input argument (a string), by counting up the
+# number of characters in the string. 
+def lenIter(aStr):
+    '''
+    aStr: a string
+    
+    returns: int, the length of aStr
+    '''
+    # Your code here
+    char = []
+    count = 0
+    for i in aStr:
+        char.append(i)
+        count += 1
+    return count
+
+
+#use recursive method :
+def lenRecur(aStr):
+    '''
+    aStr: a string
+    
+    returns: int, the length of aStr
+    '''
+    # Your code here
+    if aStr == " ":
+        return 0
+    return lenRecur(aStr[1:])
+
+
+#print lenRecur('')
+#print lenRecur('mlosxeqmtbuujsmy')
 
 
 

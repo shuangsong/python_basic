@@ -326,6 +326,35 @@ def isIn(char, aStr):
    #  so recursively search on the last half of aStr
    else:
       return isIn(char, aStr[midIndex+1:])
+  
+  
+  
+  #tuple exercise:(lecture 6)
+def oddTuples(aTup):
+    '''
+    aTup: a tuple
+    
+    returns: tuple, every other element of aTup. 
+    '''
+    # Your Code Here
+    if aTup == ():
+        return ()
+    l = []
+    keep = [i for i in range(len(aTup)) if i % 2 == 0]
+    for x in keep:
+        l.append(aTup[x])
+        mytuple = tuple(l)
+    return mytuple
+    
+
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 

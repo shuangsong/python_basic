@@ -347,8 +347,13 @@ def oddTuples(aTup):
     return mytuple
     
 
-  
-  
+# assume testList = [1, -4, 8, -9]
+#use applytoeach function to apply each element in the list.  
+ # Your Code Here
+def absolute(a):
+    return abs(a)
+    
+applyToEach(testList, absolute) 
   
   
   

@@ -355,28 +355,55 @@ def absolute(a):
     
 applyToEach(testList, absolute) 
   
+# see what you get:  
+def applyEachTo(L, x):
+    result = []
+    for i in range(len(L)):
+        result.append(L[i](x))
+    return result
+
+
+def square(a):
+    return a*a
+
+def halve(a):
+    return a/2
+
+def inc(a):
+    return a+1
+
+
+#print applyEachTo([inc, square, halve, abs], -3)
+#print applyEachTo([inc, square, halve, abs], 3.0)
+print applyEachTo([inc, max, int], -3)
   
   
-  
-  
-  
+#write a procedure, called howMany, which returns the sum of the number of values 
+#associated with a dictionary.  
+
+def howMany(aDict):
+    '''
+    aDict: A dictionary, where all the values are lists.
+
+    returns: int, how many values are in the dictionary.
+    '''
+    # Your Code Here
+    return sum(len(aDict) for aDict in aDict.itervalues())
 
 
 
+#return biggest value of key : 
+def biggest(aDict):
+    '''
+    aDict: A dictionary, where all the values are lists.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    returns: The key with the largest number of values associated with it
+    '''
+    result = None
+    biggestValue = 0
+    for key in aDict.keys():
+        if len(aDict[key]) >= biggestValue:
+            result = key
+            biggestValue = len(aDict[key])
+    return result
 

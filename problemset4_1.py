@@ -6,6 +6,10 @@ SCRABBLE_LETTER_VALUES = {
 }
 # Problem #1: Scoring a word
 #
+
+#print SCRABBLE_LETTER_VALUES.values()
+
+
 def getWordScore(word, n):
     """
     Returns the score for a word. Assumes the word is a valid word.
@@ -23,3 +27,16 @@ def getWordScore(word, n):
     """
     # TO DO ... <-- Remove this comment when you code this function
 
+    total = 0
+    word = word.lower()
+    for i in word:
+        total = total + SCRABBLE_LETTER_VALUES[i]
+        if n == len(word):
+            final = n * total + 50
+        else:
+            final = n * total
+    print final 
+
+
+getWordScore("WORD", 5)
+        

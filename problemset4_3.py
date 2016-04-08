@@ -13,7 +13,15 @@ def isValidWord(word, hand, wordList):
     wordList: list of lowercase strings
     """
     # TO DO ... <-- Remove this comment when you code this function
+    if word == "" :
+        return False
+    elif word in wordList:
+        return True
+    elif 
 
+print isValidWord("hello", hand, "abcdefghhi")
+                          
+    
 
 
 

@@ -2,19 +2,15 @@ hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}
 
 #this problem is to find how many letter word in hand.
 
-
+#displayHand is helper function that used in the following function:
 def displayHand(hand):
-    my_list= []
+    s = ""
     for key in hand.keys():
-        l = key * hand[key]
-        l2 = list(l)
-        my_list.append(l2)
-        ''.join(my_list)
-    return my_list
+        l = (key + ' ') * hand[key] # string
+        s += str(l) # append string
+    print s
 
-print displayHand(hand)
-
-
+displayHand(hand)
 
 
 def updateHand(hand, word):
@@ -34,7 +30,15 @@ def updateHand(hand, word):
     returns: dictionary (string -> int)
     """
     # TO DO ... <-- Remove this comment when you code this function
-   
+    handCopy = hand.copy()
+    for l in word:
+        if handCopy[l] >= 1:
+            handCopy[l] -= 1
+       
+    print handCopy
+
+updateHand(hand,"quail")
+        
 
         
         

@@ -1,4 +1,5 @@
 #Hand Length 
+hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}   
 def calculateHandlen(hand):
     """ 
     Returns the length (number of letters) in the current hand.
@@ -11,14 +12,9 @@ def calculateHandlen(hand):
     copy = hand.copy()
     for k in copy.values():
         total += k
-        return total
-
-hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}    
-
+    return total
+ 
 print calculateHandlen(hand)
-
-
-
 
 
 

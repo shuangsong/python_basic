@@ -11,3 +11,5 @@ def buildCoder(shift):
     returns: dict
     """
     ### TODO 
+    
+    
